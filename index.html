@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Imóveis Residenciais - Viva Onde Sempre Quis</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Procurando um imóvel? No Viva Onde Sempre Quis você encontra imóveis prontos, em obras e na planta. Atendemos em toda São Paulo. Clique e confira!">
+        <meta property="og:image" content="https://www.vivaondesemprequis.com.br/images/logos/vosq-logo-436x228.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="436">
+        <meta property="og:image:height" content="228">
+        <meta property="og:description" content="Procurando um imóvel? No Viva Onde Sempre Quis você encontra imóveis prontos, em obras e na planta. Atendemos em toda São Paulo. Clique e confira!">
+
+        <meta name="apple-mobile-web-app-title" content="Viva Onde Sempre Quis">
+        <meta name="application-name" content="Viva Onde Sempre Quis">
+        <meta name="msapplication-TileColor" content="#034f84">
+        <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+        <meta name="msapplication-config" content="/icons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="icon" type="image/x-icon" href="/icons/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+        <link rel="manifest" href="/icons/site.webmanifest">
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#034f84">
+
+        <link rel="preload" href="/scripts/jquery.min.js?v=3.7.0" as="script">
+        <link rel="preload" href="/css/font-awesome.min.css?v=4.7.0" as="style">
+        <link rel="stylesheet" href="/css/font-awesome.min.css?v=4.7.0">
+        <link rel="stylesheet" href="/css/w3.css?v=4.15">
+        <link rel="stylesheet" href="/css/vosq.css?v=1.0.1">
+
+        <script src="/scripts/jquery.min.js?v=3.7.0"></script>
+        <script src="/scripts/modalmenu.js"></script>
+        <script type="module" src="/scripts/dadosimoveis.js"></script>
+        <script type="module" src="/scripts/resultadoimoveis.js"></script>
+        <script>
+            var filtroImoveis = "pronto";
+        </script>
+    </head>
+
+    <body class="w3-white" style="overflow-y: auto;">
+
+        <!-- Chat Flutuante -->
+        <div id="chat-flutuante" title="Chat Online">
+            <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank"><i class="material-symbols-outlined icone-chatflutuante">sms</i></a>
+        </div>
+
+        <header>            
+            <div id="container-barra" class="w3-center w3-black sem-selecao">
+                <!-- Menu de Navegação -->
+                <div id="container-barranav">
+                    <div id="barra-nav" class="w3-bar w3-black w3-large">
+                        
+                        <div id="container-logotipo" class="w3-bar-item">
+                            <a id="logotipo" title="Viva Onde Sempre Quis">
+                                <img id="foto-logotipo" src="/images/logos/logo-vivaondesemprequis.svg">
+                            </a>
+                        </div>
+
+                        <div id="container-imoveis" class="w3-bar-item responsivo-m">
+                            <div id="item-imoveis" class="w3-dropdown-hover w3-black w3-hover-white sem-decoracao">
+                                <span id="texto-imoveis" title="Categorias de Imóveis">
+                                    Imóveis<i class="material-symbols-outlined icone-imoveis">keyboard_arrow_down</i>
+                                </span>
+                                <div id="dropdown-imoveis" class="w3-dropdown-content w3-center w3-bar-block w3-medium">
+                                    <a href="/imoveis/prontos.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Prontos">
+                                        Prontos
+                                    </a>
+                                    <div class="w3-center separador-h"></div>
+                                    <a href="/imoveis/em-obras.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Em Obras">
+                                        Em Obras
+                                    </a>
+                                    <div class="w3-center separador-h"></div>
+                                    <a href="/imoveis/na-planta.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Na Planta">
+                                        Na Planta
+                                    </a>
+                                    <div class="w3-center separador-h"></div>
+                                    <a href="/imoveis/zona-sul.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Zona Sul">
+                                        Zona Sul
+                                    </a>
+                                    <div class="w3-center separador-h"></div>
+                                    <a href="/imoveis/zona-oeste.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Zona Oeste">
+                                        Zona Oeste
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="container-vendas" class="w3-bar-item w3-medium responsivo-m">
+                            <div id="central-vendas">
+                                <strong>
+                                    Central de Vendas<br>
+                                    <i class="material-symbols-outlined icone-vendas">phone_in_talk</i>(11) 96198-6585
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div id="container-chat" class="w3-bar-item w3-medium responsivo-m">
+                            <div id="chat" title="Conversar por Chat Online">
+                                <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank" class="sem-decoracao">
+                                    <i class="material-symbols-outlined icone-chat">forum</i>Conversar por Chat
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="separador-v responsivo-m"></div>
+
+                        <div id="container-menu" class="w3-bar-item w3-medium responsivo-m">
+                            <div id="menu-navegacao" onclick="abrirModal()" title="Menu Principal">
+                                <span class="sem-decoracao">
+                                    <i class="material-symbols-outlined icone-menu">menu</i>Menu
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Menu de Navegação Mobile -->
+                <div id="barra-mobile" class="w3-bar w3-black w3-large">
+                    <div class="w3-bar-item w3-medium mobile-m">
+                        <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank" class="link-mobile">
+                            <i id="mobile-chat" class="material-symbols-outlined icone-mobile" title="Conversar por Chat Online">
+                                forum
+                            </i>
+                        </a>
+                    </div>
+
+                    <div class="w3-bar-item w3-medium mobile-m">
+                        <i id="mobile-menu" onclick="abrirModal()" class="material-symbols-outlined icone-mobile" title="Menu Principal">
+                            menu
+                        </i>
+                    </div>
+                </div>
+                
+            </div>
+        </header>
+
+        <main>
+            <!-- Banner -->
+            <div id="container-banner">
+                <div id="dados-banner">
+                    <a id="imovel-banner" href="/imoveis/residencial.html?id=peninsula-vila-madalena" class="sem-decoracao" title="Ver Imóvel: Península Vila Madalena">
+
+                        <div id="categorias-banner">
+                            <span class="status-banner">Em Obras</span>
+                            <span class="status-banner">Vila Madalena</span>
+                        </div>
+                        
+                        <div id="link-banner">
+                            Península Vila Madalena
+                        </div>
+                        
+                        <div id="descricao-banner">
+                            Inspiração por todos os lados.
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Conteúdo da Página -->
+            <div id="conteudo-pagina" class="w3-content">
+
+                <!-- Títulos -->
+                <div class="w3-container w3-margin-top">
+
+                    <h2 class="titulo-pagina">Encontre Seu Imóvel</h2>
+
+                    <div id="container-nav" class="w3-small">
+                        <a href="/" class="nav-conteudo" title="Página Principal">Home</a>
+                        <span class="barra-conteudo"></span>
+                        <span>Imóveis</span>
+                        <span class="barra-conteudo"></span>
+                        <span>Residenciais</span>
+                        <span class="barra-conteudo"></span>
+                        <span><strong>Prontos</strong></span>
+                    </div>
+
+                </div>
+
+                <!-- Filtros -->
+                <div id="botoes-nav" class="w3-container w3-margin-top">
+
+                    <button class="w3-button w3-round-large w3-margin-right botao-selecionado" title="Imóveis Prontos">
+                        <i class="material-symbols-outlined icone-nav">home</i>Prontos
+                    </button>
+
+                    <a href="/imoveis/em-obras.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Em Obras">
+                        <i class="material-symbols-outlined icone-nav">build</i>Em Obras
+                    </a>
+
+                    <a href="/imoveis/na-planta.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Na Planta">
+                        <i class="material-symbols-outlined icone-nav">design_services</i>Na Planta
+                    </a>
+
+                    <a href="/imoveis/zona-sul.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Zona Sul">
+                        <i class="material-symbols-outlined icone-nav">home_pin</i>Zona Sul
+                    </a>
+
+                    <a href="/imoveis/zona-oeste.html" class="w3-button w3-round-large botao-nav" title="Imóveis Zona Oeste">
+                        <i class="material-symbols-outlined icone-nav">home_pin</i>Zona Oeste
+                    </a>
+
+                </div>
+            
+                <!-- Cards dos Imóveis -->
+                <div id="resultado-imoveis" class="w3-padding-16 conteudo-imoveis">
+
+                    <a href="" class="w3-card w3-hover-shadow sem-decoracao card-imoveis" title="">
+                        <img src="" class="foto-imoveis">
+                        <div class="w3-container w3-white">
+                            <div class="titulo-imovel">
+                                <strong><span class="imovel_nome"></span></strong>
+                            </div>
+
+                            <div class="titulo-status">
+                                <strong><span class="imovel_status"></strong>
+                            </div>
+
+                            <div id="container-dados">
+                                <div class="dados-local">
+                                    <i class="material-symbols-outlined icone-dados">location_on</i><span class="imovel_local"></span> | <span class="imovel_zona"></span>
+                                </div>
+                                <div class="dados-imovel">
+                                    <i class="material-symbols-outlined icone-dados">domain</i>
+                                    <div class="detalhes-imovel">
+                                        <span class="imovel_dados"></span><span class="separador-imoveis">&nbsp;|&nbsp;</span><span class="imovel_detalhes"></span>
+                                    </div>
+                                </div>
+                                <div class="dados-vagas">
+                                    <i class="material-symbols-outlined icone-dados">directions_car</i>
+                                    <span class="imovel_vagas"></span>
+                                </div>
+                            </div>
+
+                            <button class="w3-button w3-block w3-round-xxlarge botao-imoveis">Ver Imóvel</button>
+                        </div>                    
+                    </a>
+
+                </div>
+            </div>
+        
+        </main>
+
+        <footer class="w3-margin-top">
+
+            <div id="barra-rodape" class="w3-black w3-center sem-selecao">
+                <div id="texto-atendimento"><strong>Atendemos em toda São Paulo</strong></div>
+                <div id="separador-rodape"></div>
+                <div id="texto-vendas"><strong>Central de Vendas (11) 96198-6585</strong></div>
+            </div>
+            
+            <div id="rodape" class="w3-padding-32 w3-center sem-selecao">
+                <img id="logotipo-rodape" src="/images/logos/logo-vivaondesemprequis-rodape.svg">
+                <div id="container-rodape">
+                    <div id="categorias-rodape">
+                        <ul id="lista-rodape">
+                            <li>
+                                <a href="/imoveis/prontos.html" class="sem-decoracao" title="Imóveis Prontos">
+                                    <i class="material-symbols-outlined icone-rodape">home</i>Imóveis Prontos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/imoveis/em-obras.html" class="sem-decoracao" title="Imóveis Em Obras">
+                                    <i class="material-symbols-outlined icone-rodape">build</i>Imóveis Em Obras
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/imoveis/na-planta.html" class="sem-decoracao" title="Imóveis Na Planta">
+                                    <i class="material-symbols-outlined icone-rodape">design_services</i>Imóveis Na Planta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/imoveis/zona-sul.html" class="sem-decoracao" title="Imóveis Zona Sul">
+                                    <i class="material-symbols-outlined icone-rodape">home_pin</i>Imóveis Zona Sul
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/imoveis/zona-oeste.html" class="sem-decoracao" title="Imóveis Zona Oeste">
+                                    <i class="material-symbols-outlined icone-rodape">home_pin</i>Imóveis Zona Oeste
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="container-redes">
+                        <h4 class="texto-redes"><strong>Nossas redes sociais</strong></h4>
+
+                        <a href="https://www.instagram.com/vivaondesemprequis/" target="_blank" class="link-redes" title="Instagram: @vivaondesemprequis">
+                            <i class="fa fa-instagram icone-redes"></i>
+                        </a>
+                        
+                        <a href="https://www.facebook.com/profile.php?id=100064546669671" target="_blank" class="link-redes" title="Facebook: viva_onde_sempre_quis">
+                            <i class="fa fa-facebook-square icone-redes"></i>
+                        </a>
+
+                        <div id="fale-conosco">
+                            <h4 class="texto-redes"><strong>Fale conosco</strong></h4>
+
+                            <div id="chat-rodape">
+                                <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank" title="Conversar por Chat Online">
+                                    <i class="material-symbols-outlined icone-conversar">forum</i><strong>Conversar por Chat</strong>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="barra-direitos" class="w3-white sem-selecao">
+                <div id="texto-direitos">
+                    &copy; 2023 Viva Onde Sempre Quis | CNPJ: 51.361.182.0001/67 | Todos os Direitos Reservados.<br>
+                    Desenvolvido por
+                    <a href="https://www.linkedin.com/in/paulodeandrade23/" target="_blank" class="link-direitos" title="LinkedIn: @paulodeandrade23">
+                        Paulo de Andrade<i id="icone-linkedin" class="fa fa-linkedin-square"></i>
+                    </a>
+                    | Versão: github-1.1.5
+                </div>
+            </div>
+
+        </footer>
+
+        <div id="modal-menu" style="display: none;">
+            <div id="container-modal" class="w3-center sem-selecao">
+                <div id="conteudo-modal">
+                    <div id="categorias-modal">
+                        <ul id="lista-modal">
+                            <li>
+                                <a href="/imoveis/prontos.html" class="sem-decoracao" title="Imóveis Prontos">
+                                    <i class="material-symbols-outlined icone-modal">home</i>Imóveis Prontos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/imoveis/em-obras.html" class="sem-decoracao" title="Imóveis Em Obras">
+                                    <i class="material-symbols-outlined icone-modal">build</i>Imóveis Em Obras
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/imoveis/na-planta.html" class="sem-decoracao" title="Imóveis Na Planta">
+                                    <i class="material-symbols-outlined icone-modal">design_services</i>Imóveis Na Planta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/imoveis/zona-sul.html" class="sem-decoracao" title="Imóveis Zona Sul">
+                                    <i class="material-symbols-outlined icone-modal">home_pin</i>Imóveis Zona Sul
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/imoveis/zona-oeste.html" class="sem-decoracao" title="Imóveis Zona Oeste">
+                                    <i class="material-symbols-outlined icone-modal">home_pin</i>Imóveis Zona Oeste
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="container-redesmodal">
+                        <h4 class="texto-modal"><strong>Nossas redes sociais</strong></h4>
+
+                        <a href="https://www.instagram.com/vivaondesemprequis/" target="_blank" class="link-modal" title="Instagram: @vivaondesemprequis">
+                            <i class="fa fa-instagram icone-redesmodal"></i>
+                        </a>
+                        
+                        <a href="https://www.facebook.com/profile.php?id=100064546669671" target="_blank" class="link-modal" title="Facebook: viva_onde_sempre_quis">
+                            <i class="fa fa-facebook-square icone-redesmodal"></i>
+                        </a>
+
+                        <div id="fale-conoscomodal">
+                            <h4 class="texto-modal"><strong>Fale conosco</strong></h4>
+
+                            <div id="chat-modal">
+                                <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank" title="Conversar por Chat Online">
+                                    <i class="material-symbols-outlined icone-conversarmodal">forum</i><strong>Conversar por Chat</strong>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="rodape-modal">
+                    <span id="textorodape-modal">Viva Onde Sempre Quis - CNPJ: 51.361.182.0001/67</span>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

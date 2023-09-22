@@ -1,0 +1,88 @@
+<div id="container-barra" class="w3-center w3-black sem-selecao">
+    <!-- Menu de Navegação -->
+    <div id="container-barranav">
+        <div id="barra-nav" class="w3-bar w3-black w3-large">
+
+            <div id="container-logotipo" class="w3-bar-item">
+                <a href="/" id="logotipo" title="Viva Onde Sempre Quis">
+                    <img id="foto-logotipo" src="/images/logos/logo-vivaondesemprequis.svg">
+                </a>
+            </div>
+
+            <div id="container-imoveis" class="w3-bar-item responsivo-m">
+                <div id="item-imoveis" class="w3-dropdown-hover w3-black w3-hover-white sem-decoracao">
+                    <span id="texto-imoveis" title="Categorias de Imóveis">
+                        Imóveis<i class="material-symbols-outlined icone-imoveis">keyboard_arrow_down</i>
+                    </span>
+                    <div id="dropdown-imoveis" class="w3-dropdown-content w3-center w3-bar-block w3-medium">
+                        <a href="/imoveis/prontos.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Prontos">
+                            Prontos
+                        </a>
+                        <div class="w3-center separador-h"></div>
+                        <a href="/imoveis/em-obras.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Em Obras">
+                            Em Obras
+                        </a>
+                        <div class="w3-center separador-h"></div>
+                        <a href="/imoveis/na-planta.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Na Planta">
+                            Na Planta
+                        </a>
+                        <div class="w3-center separador-h"></div>
+                        <a href="/imoveis/zona-sul.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Zona Sul">
+                            Zona Sul
+                        </a>
+                        <div class="w3-center separador-h"></div>
+                        <a href="/imoveis/zona-oeste.html" class="w3-bar-item sem-decoracao coritem-nav" title="Imóveis Zona Oeste">
+                            Zona Oeste
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="container-vendas" class="w3-bar-item w3-medium responsivo-m">
+                <div id="central-vendas">
+                    <strong>
+                        Central de Vendas<br>
+                        <i class="material-symbols-outlined icone-vendas">phone_in_talk</i>(11) 96198-6585
+                    </strong>
+                </div>
+            </div>
+
+            <div id="container-chat" class="w3-bar-item w3-medium responsivo-m">
+                <div id="chat" title="Conversar por Chat Online">
+                    <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank" class="sem-decoracao">
+                        <i class="material-symbols-outlined icone-chat">forum</i>Conversar por Chat
+                    </a>
+                </div>
+            </div>
+
+            <div class="separador-v responsivo-m"></div>
+
+            <div id="container-menu" class="w3-bar-item w3-medium responsivo-m">
+                <div id="menu-navegacao" onclick="abrirModal()" title="Menu Principal">
+                    <span class="sem-decoracao">
+                        <i class="material-symbols-outlined icone-menu">menu</i>Menu
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Menu de Navegação Mobile -->
+    <div id="barra-mobile" class="w3-bar w3-black w3-large">
+        <div class="w3-bar-item w3-medium mobile-m">
+            <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank" class="link-mobile">
+                <i id="mobile-chat" class="material-symbols-outlined icone-mobile" title="Conversar por Chat Online">
+                    forum
+                </i>
+            </a>
+        </div>
+
+        <div class="w3-bar-item w3-medium mobile-m">
+            <i id="mobile-menu" onclick="abrirModal()" class="material-symbols-outlined icone-mobile" title="Menu Principal">
+                menu
+            </i>
+        </div>
+    </div>
+    
+</div>

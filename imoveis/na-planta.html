@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Imóveis Residenciais Na Planta - Viva Onde Sempre Quis</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Procurando um imóvel? No Viva Onde Sempre Quis você encontra imóveis prontos, em obras e na planta. Atendemos em toda São Paulo. Clique e confira!">
+        <meta property="og:image" content="https://www.vivaondesemprequis.com.br/images/logos/vosq-logo-436x228.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="436">
+        <meta property="og:image:height" content="228">
+        <meta property="og:description" content="Procurando um imóvel? No Viva Onde Sempre Quis você encontra imóveis prontos, em obras e na planta. Atendemos em toda São Paulo. Clique e confira!">
+        
+        <meta name="apple-mobile-web-app-title" content="Viva Onde Sempre Quis">
+        <meta name="application-name" content="Viva Onde Sempre Quis">
+        <meta name="msapplication-TileColor" content="#034f84">
+        <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+        <meta name="msapplication-config" content="/icons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="icon" type="image/x-icon" href="/icons/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+        <link rel="manifest" href="/icons/site.webmanifest">
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#034f84">
+
+        <link rel="preload" href="/scripts/jquery.min.js?v=3.7.0" as="script">
+        <link rel="preload" href="/css/font-awesome.min.css?v=4.7.0" as="style">
+        <link rel="stylesheet" href="/css/font-awesome.min.css?v=4.7.0">
+        <link rel="stylesheet" href="/css/w3.css?v=4.15">
+        <link rel="stylesheet" href="/css/vosq.css?v=1.0.1">
+
+        <script src="/scripts/jquery.min.js?v=3.7.0"></script>
+        <script src="/scripts/modalmenu.js"></script>
+        <script type="module" src="/scripts/dadosimoveis.js"></script>
+        <script type="module" src="/scripts/resultadoimoveis.js"></script>
+        <script>
+            var filtroImoveis = "planta";
+        </script>
+        <script>
+
+            $(document).ready(function() {
+                $('#cabecalho').load('/layouts/cabecalho.html');
+                $('#rodape').load('/layouts/rodape.html');
+                $('#modal').load('/layouts/modalmenu.html');
+            });
+
+        </script>
+    </head>
+
+    <body class="w3-white" style="overflow-y: auto;">
+
+        <!-- Chat Flutuante -->
+        <div id="chat-flutuante" title="Chat Online">
+            <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank"><i class="material-symbols-outlined icone-chatflutuante">sms</i></a>
+        </div>
+        
+        <header>
+
+            <div id="cabecalho"></div>
+            
+        </header>
+
+        <main>                        
+            <!-- Conteúdo da Página -->
+            <div id="conteudo-pagina" class="w3-content">
+
+                <!-- Títulos -->
+                <div class="w3-container w3-margin-top">
+
+                    <h2 class="titulo-pagina">Imóveis Na Planta</h2>
+
+                    <div id="container-nav" class="w3-small">
+                        <a href="/" class="nav-conteudo" title="Página Principal">Home</a>
+                        <span class="barra-conteudo"></span>
+                        <span>Imóveis</span>
+                        <span class="barra-conteudo"></span>
+                        <span>Residenciais</span>
+                        <span class="barra-conteudo"></span>
+                        <span><strong>Na Planta</strong></span>
+                    </div>
+
+                </div>
+
+                <!-- Filtros -->
+                <div id="botoes-nav" class="w3-container w3-margin-top">
+
+                    <a href="/imoveis/prontos.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Prontos">
+                        <i class="material-symbols-outlined icone-nav">home</i>Prontos
+                    </a>
+
+                    <a href="/imoveis/em-obras.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Em Obras">
+                        <i class="material-symbols-outlined icone-nav">build</i>Em Obras
+                    </a>
+
+                    <button class="w3-button w3-round-large w3-margin-right botao-selecionado" title="Imóveis Na Planta">
+                        <i class="material-symbols-outlined icone-nav">design_services</i>Na Planta
+                    </button>
+
+                    <a href="/imoveis/zona-sul.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Zona Sul">
+                        <i class="material-symbols-outlined icone-nav">home_pin</i>Zona Sul
+                    </a>
+
+                    <a href="/imoveis/zona-oeste.html" class="w3-button w3-round-large botao-nav" title="Imóveis Zona Oeste">
+                        <i class="material-symbols-outlined icone-nav">home_pin</i>Zona Oeste
+                    </a>
+
+                </div>
+            
+                <!-- Cards dos Imóveis -->
+                <div id="resultado-imoveis" class="w3-padding-16 conteudo-imoveis">
+
+                    <a href="" class="w3-card w3-hover-shadow sem-decoracao card-imoveis" title="">
+                        <img src="" class="foto-imoveis">
+                        <div class="w3-container w3-white">
+                            <div class="titulo-imovel">
+                                <strong><span class="imovel_nome"></span></strong>
+                            </div>
+
+                            <div class="titulo-status">
+                                <strong><span class="imovel_status"></strong>
+                            </div>
+
+                            <div id="container-dados">
+                                <div class="dados-local">
+                                    <i class="material-symbols-outlined icone-dados">location_on</i><span class="imovel_local"></span> | <span class="imovel_zona"></span>
+                                </div>
+                                <div class="dados-imovel">
+                                    <i class="material-symbols-outlined icone-dados">domain</i>
+                                    <div class="detalhes-imovel">
+                                        <span class="imovel_dados"></span><span class="separador-imoveis">&nbsp;|&nbsp;</span><span class="imovel_detalhes"></span>
+                                    </div>
+                                </div>
+                                <div class="dados-vagas">
+                                    <i class="material-symbols-outlined icone-dados">directions_car</i>
+                                    <span class="imovel_vagas"></span>
+                                </div>
+                            </div>
+
+                            <button class="w3-button w3-block w3-round-xxlarge botao-imoveis">Ver Imóvel</button>
+                        </div>                    
+                    </a>
+
+                </div>
+            </div>
+        
+        </main>
+
+        <footer class="w3-margin-top">
+
+            <div id="rodape"></div>
+
+        </footer>
+
+        <div id="modal"></div>
+
+    </body>
+</html>

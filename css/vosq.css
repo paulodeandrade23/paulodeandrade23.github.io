@@ -1,0 +1,1470 @@
+/*! Viva Onde Sempre Quis v1.0.1 por Paulo de Andrade | https://www.linkedin.com/in/paulodeandrade23/ - @paulodeandrade23 */
+/* Lato - latin-ext */
+@font-face{
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/lato-ext.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* Lato - latin */
+@font-face{
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/lato.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Material Symbols - outlined weight 400 */
+@font-face{
+    font-family: "Material Symbols Outlined";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/materialsymbols-outlined.woff2) format('woff2');
+}
+/* Material Symbols - outlined weight 200 */
+@font-face{
+    font-family: "Material Symbols Outlined Variation 200";
+    font-style: normal;
+    font-weight: 100 700;
+    src: url(/fonts/materialsymbols-outlined-variation.woff2) format('woff2');
+}
+.material-symbols-outlined, .material-symbols-outlined-variation{
+    display: inline-block;
+    
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+}
+.material-symbols-outlined{
+    font-family: "Material Symbols Outlined";
+}
+.material-symbols-outlined-variation{
+    font-family: "Material Symbols Outlined Variation 200";
+}
+.variacao-imoveis{
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 40
+}
+@keyframes fadeinModal{from{opacity:0} to{opacity:1}}
+@media (min-width: 1201px){
+    .mobile-m{
+        display: none !important;
+    }
+}
+@media (min-width: 1200px){
+    .conteudo-imoveis{
+        justify-content: space-between;
+    }
+}
+@media (max-width: 1200px){
+    .responsivo-m{
+        display: none !important;
+    }
+    .mobile-m{
+        display: block !important;
+    }
+}
+@media (max-width: 1117px){
+    #foto-principal{
+        width: 100% !important;
+        min-height: 500px !important;
+
+        background-position: top !important;
+    }
+    #container-informacoes{
+        width: 100% !important;
+    }
+    #container-banner{
+        min-height: 400px !important;
+
+        background-position: top !important;
+    }
+    #link-banner{
+        font-size: 5vw !important;
+    }
+    #descricao-banner{
+        font-size: 1.8vw !important;
+    }
+    .status-banner{
+        font-size: 1.4vw !important;
+    }
+}
+@media (max-width: 859px){
+    .foto-galeria, .foto-plantas{
+        height: 400px !important;
+    }
+    #botao-anterior, #botao-proximo, #botao-anteriorplantas, #botao-proximoplantas{
+        top: 173px !important;
+
+        padding: 12px !important;
+    }
+    .contador-galeria, .contador-plantas{
+        width: 65px !important;
+
+        font-size: 15px !important;
+    }
+    #icone-telacheia, #icone-telacheiaplantas{
+        font-size: 26px !important;
+    }
+}
+@media (max-width: 600px){
+    .responsivo-p{
+        display: none !important;
+    }
+    .mobile-p{
+        display: block !important;
+    }
+    .titulo-pagina{
+        font-size: 25px;
+    }
+    #foto-principal, #container-banner{
+        min-width: 360px !important;
+        min-height: 300px !important;
+
+        background-position: center !important;
+    }
+    .foto-galeria, .foto-plantas{
+        min-width: 360px !important;
+        height: 300px !important;
+
+        background-position: top !important;
+    }
+    .foto-plantas{
+        background-position: center !important;
+    }
+    #botao-anterior, #botao-proximo, #botao-anteriorplantas, #botao-proximoplantas{
+        top: 127px !important;
+        
+        padding: 8px !important;
+    }
+    .contador-galeria, .contador-plantas{
+        width: 60px !important;
+
+        font-size: 14px !important;
+    }
+    #icone-telacheia, #icone-telacheiaplantas{
+        font-size: 22px !important;
+    }
+}
+@media (max-width: 574px){
+    #separador-rodape{
+        display: none !important;
+    }
+    #texto-atendimento{
+        padding-right: 17px !important;
+    }
+}
+@media (max-width: 392px){
+    #barra-mobile{
+        display: none !important;
+    }
+    #container-barra, #barra-nav{
+        background: #034F84 !important;
+    }
+    #link-banner{
+        font-size: 19.6px !important;
+    }
+    #descricao-banner{
+        font-size: 7.056px !important;
+    }
+    .status-banner{
+        font-size: 5.488px !important;
+    }
+}
+body,h1,h2,h3,h4,h5,h6{
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+body{
+    min-width: 392px;
+    overflow-x: hidden;
+}
+.mobile-m{
+    padding: 0 !important;
+}
+#chat-flutuante{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 200;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+
+    color: #FFF;
+    background: #034F84;
+
+    opacity: 0.4;
+    transition: all .2s ease-in-out;
+}
+#chat-flutuante:hover{
+    background: #034F84;
+
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+.icone-chatflutuante{
+    padding: 12px;
+
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    -o-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}
+.sem-selecao{
+    user-select: none;
+    -webkit-user-select: none;
+}
+#container-barra{
+    position: relative;
+}
+#container-barra::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 50vw;
+    height: 90px;
+
+    background: #034F84;
+}
+#container-barra, #barra-nav{
+    height: 90px;
+}
+#container-barranav{
+    position: relative;
+
+    display: inline-block;
+    height: 90px;
+}
+#container-logotipo{
+    min-width: 254px;
+    height: 90px;
+    padding: 0 20px 0 40px;
+
+    background: #034F84;
+    
+    transform: skewX(20deg) translateX(-16px);
+}
+#logotipo{
+    display: inline-flex;
+    margin-top: 16px;
+
+    cursor: pointer;
+    transform: skewX(-20deg);
+}
+#foto-logotipo{
+    width: 190px;
+    height: 60px;
+}
+.sem-decoracao{
+    text-decoration: none;
+}
+#container-imoveis{
+    padding: 0px;
+    margin: 16px 16px 0 16px;
+}
+#item-imoveis{
+    width: 140px;
+    height: 60px;
+    padding: 16px 16px;
+    border-bottom: 0;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    letter-spacing: 1px;
+}
+#texto-imoveis{
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 106px;
+
+    text-transform: uppercase;
+}
+.icone-imoveis{    
+    display: inline-flex;
+
+    vertical-align: bottom;
+}
+#dropdown-imoveis{
+    position: absolute;
+    top: 76px;
+    z-index: 4;
+
+    width: 140px;
+    min-width: 140px;
+    height: 198px;
+    border-top: 0;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-left: -16px;
+
+    box-shadow: 0 2px 2px #191919;
+}
+.coritem-nav:hover{
+    color: #034F84;
+}
+.separador-h{    
+    width: 100px;
+    height: 1px;
+    margin: auto;
+
+    background: #CCC;
+
+    cursor: pointer;
+}
+#container-vendas{
+    height: 90px;
+    padding: 0 30px 0 30px;
+    margin-right: 16px;
+
+    background: #034F84;
+
+    transform: skewX(20deg);
+}
+#central-vendas{
+    margin-top: 20px;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    cursor: default;
+    transform: skewX(-20deg);
+}
+.icone-vendas{
+    display: inline-flex;    
+    margin-right: 5px;
+
+    font-size: 20px;
+
+    vertical-align: middle;    
+}
+#container-chat{
+    height: 90px;
+    padding: 0 16px 0 16px;
+}
+#chat{    
+    margin-top: 30px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+#chat:hover .icone-chat{
+    color: #0468AF;
+
+    transition: all .2s ease-in-out;
+}
+.icone-chat{
+    display: inline-flex;
+    margin-right: 5px;
+
+    font-size: 30px;
+
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+}
+.separador-v{
+    float: left;
+
+    display: block;
+    width: 1px;
+    height: 40px;
+    border: none;
+    margin-top: 25px;
+    outline: 0;
+
+    background: #FFF;
+
+    cursor: default;    
+}
+#container-menu{
+    height: 90px;
+    padding: 0 16px 0 16px;
+}
+#menu-navegacao{
+    margin-top: 30px;
+
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    cursor: pointer;    
+}
+#menu-navegacao:hover .icone-menu{
+    color: #0468AF;
+
+    transition: all .2s ease-in-out;
+}
+.icone-menu{
+    display: inline-flex;
+    margin-right: 5px;
+
+    font-size: 22px;
+
+    vertical-align: text-bottom;
+    transition: all .2s ease-in-out;
+}
+#barra-mobile{
+    float: right;
+
+    height: 90px;
+}
+.link-mobile{
+    display: contents;
+
+    text-decoration: none;    
+}
+#mobile-chat{
+    margin-right: 20px;
+}
+#mobile-menu{
+    margin-right: 5px;
+}
+.icone-mobile{
+    display: inline-flex;
+    margin-top: 29px;
+
+    font-size: 32px;
+    
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+}
+.icone-mobile:hover{
+    color: #034F84;
+
+    transition: all .2s ease-in-out;
+}
+#container-banner{
+    position: relative;
+
+    width: 100%;
+    min-height: 640px;
+
+    background: url("/images/banners/banner-peninsula-vila-madalena.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: default;
+}
+#dados-banner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+#imovel-banner{
+    display: block;
+}
+#imovel-banner:hover #link-banner:after{
+    opacity: 1;
+
+    transition: all .2s ease-in-out;
+}
+#imovel-banner:not(:hover) #link-banner:after{
+    transition: all .2s ease-in-out;
+}
+#categorias-banner{
+    display: inline-flex;
+}
+.status-banner{
+    padding: 4px 8px;
+    border-radius: 8px;
+
+    font-weight: bolder;
+
+    color: #034F84;
+    background: #FFF;
+
+    box-shadow: 0 0 2px #191919;
+}
+.status-banner:first-of-type{
+    margin-right: 8px;
+}
+#link-banner{
+    padding: 12px 0 8px 0;
+
+    font-size: 55px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    text-align: left;
+    text-wrap: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 4px -4px 12px #191919;
+
+    color: #FFF;
+}
+#link-banner:after{
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0.8em;
+
+    width: 100%;
+    height: 0.08em;
+
+    background: #FFF;
+
+    opacity: 0;
+}
+#descricao-banner{
+    font-size: 20px;
+    text-align: left;
+    text-shadow: 4px -4px 12px #191919;
+
+    color: #FFF;
+}
+#conteudo-pagina{
+    max-width: 1170px;
+}
+.titulo-pagina{
+    padding: 22px 0 10px 0;
+    border-bottom: 1px solid #CCC;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: default;
+}
+#container-nav{
+    cursor: default;
+}
+.nav-conteudo{
+    text-decoration: none;
+}
+.nav-conteudo:hover{
+    text-decoration: underline;
+}
+.barra-conteudo{
+    padding: 0 3px;
+
+    vertical-align: middle;
+}
+.barra-conteudo:before{
+    content: "/";
+}
+#botoes-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+.icone-nav{
+    display: inline-flex;
+    margin-right: 5px;
+
+    font-size: 20px;
+
+    vertical-align: text-bottom;
+}
+.botao-selecionado{
+    margin-bottom: 10px;
+
+    color: #FFF;
+    background: #022C4B;
+}
+.botao-selecionado:hover{
+    color: #FFF !important;
+    background: #022C4B !important;
+}
+.botao-nav{
+    margin-bottom: 10px;
+
+    color: #FFF;
+    background: #034F84;
+
+    transition: all .2s ease-in-out;
+}
+.botao-nav:hover{
+    color: #FFF !important;
+    background: #022C4B !important;
+
+    transition: all .2s ease-in-out;
+}
+.conteudo-imoveis{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card-imoveis{    
+    min-width: 360px;
+    max-width: 360px;    
+    margin-bottom: 29px;
+
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.card-imoveis:hover .botao-imoveis{
+    color: #FFF !important;
+    background: #022C4B !important;
+
+    transition: all .2s ease-in-out;
+}
+.foto-imoveis{
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+}
+.titulo-imovel{
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    font-size: 22px;
+}
+.titulo-status{    
+    padding-bottom: 16px;
+
+    color: #034F84;
+
+    font-size: 19px;
+}
+#container-dados{
+    height: 155px;
+}
+.dados-local{
+    padding-bottom: 10px;
+}
+.dados-imovel{
+    display: flex;
+    padding: 10px 0 10px 0;
+    border-top: 1px solid #CCC;
+}
+.dados-vagas{
+    padding: 10px 0 10px 0;
+    border-top: 1px solid #CCC;
+}
+.icone-dados{
+    display: inline-flex;
+    padding-right: 5px;
+
+    vertical-align: bottom;
+}
+.botao-imoveis{
+    margin-bottom: 20px;
+
+    color: #FFF;
+    background: #034F84;
+
+    transition: all .2s ease-in-out;
+}
+.botao-imoveis:hover{
+    color: #FFF !important;
+    background: #022C4B !important;
+
+    transition: all .2s ease-in-out;
+}
+#barra-rodape{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    height: 70px;
+}
+#texto-atendimento, #texto-vendas{
+    padding: 0 16px 0 16px;
+
+    letter-spacing: 1px;
+
+    cursor: default;
+}
+#separador-rodape{
+    width: 1px;
+
+    background: #FFF;
+}
+#rodape{
+    color: #191919;
+    background: #E7E7E7;
+}
+#logotipo-rodape{
+    width: 100px;
+    height: auto;
+    padding-bottom: 16px;
+}
+#container-rodape{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#categorias-rodape{
+    border-bottom: 1px solid #E7E7E7;
+}
+#lista-rodape{
+    padding: 0 20px 0 20px;
+    margin-top: 16px;
+
+    text-align: left;
+
+    list-style: none;
+}
+#lista-rodape li{
+    margin-bottom: 20px;
+}
+#lista-rodape li a:hover{
+    color: #034F84;
+
+    text-decoration: underline;
+}
+.icone-rodape{
+    display: inline-flex;
+    margin-right: 5px;
+
+    font-size: 20px;
+
+    vertical-align: text-bottom;
+}
+#container-redes{
+    padding: 0 20px 0 20px;
+}
+.texto-redes{
+    margin: 16px 0 20px 0;
+
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    cursor: default;
+}
+.link-redes{
+    margin: 0 20px 10px 0;
+
+    text-decoration: none;
+}
+.icone-redes{
+    display: inline-flex;
+
+    font-size: 40px;
+
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+}
+.icone-redes:hover{
+    color: #034F84;
+
+    transition: all .2s ease-in-out;
+}
+#fale-conosco{
+    margin-top: 20px;
+}
+#chat-rodape{
+    border: 2px solid #191919;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+#chat-rodape:hover{
+    border-color: #034F84;
+
+    cursor: pointer;
+}
+#chat-rodape:hover .icone-conversar{
+    color: #034F84;
+}
+#chat-rodape a{
+    display: block;
+    padding: 2px;
+
+    text-decoration: none;
+}
+.icone-conversar{
+    display: inline-flex;
+    margin-right: 5px;
+
+    font-size: 32px;
+
+    cursor: pointer;
+    vertical-align: middle;
+}
+#barra-direitos{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    height: 140px;
+}
+#texto-direitos{
+    padding: 0 16px 0 16px;
+
+    font-size: 14px;
+    text-align: center;
+
+    cursor: default;
+}
+.link-direitos{
+    display: inline-block;
+    
+    text-decoration: none;
+}
+.link-direitos:hover{
+    color: #034F84;
+
+    text-decoration: underline;
+}
+#icone-linkedin{
+    margin-left: 4px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+.scrollbar-modal::-webkit-scrollbar{
+    background: #191919;
+}
+#modal-menu{
+    position: fixed;
+    top: 90px;
+    left: 0;
+    z-index: 2;
+    
+    border-top: 2px solid #FFF;
+    width: 100%;
+    min-width: 392px;
+    height: calc(100vh - 90px);
+    
+    color: #FFF;
+    background: #191919;
+
+    overflow: auto;
+}
+#modal-menu::-webkit-scrollbar{
+    width: 1px;
+}
+#modal-menu::-webkit-scrollbar-thumb{
+    border-radius: 16px;
+
+    background: #191919;
+}
+#container-modal{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    height: inherit;
+    min-height: 360px;
+}
+#conteudo-modal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    font-size: 22px;
+}
+#categorias-modal{
+    border-bottom: 1px solid #191919;
+}
+#lista-modal{
+    padding: 0 40px 0 40px;
+    margin-top: 16px;
+
+    text-align: left;
+
+    list-style: none;
+}
+#lista-modal li{
+    margin-bottom: 20px;
+}
+#lista-modal li a:hover{
+    color: #FFF;
+
+    text-decoration: underline;
+}
+.icone-modal{
+    display: inline-flex;
+    margin-right: 5px;
+
+    font-size: 27px;
+
+    vertical-align: text-bottom;
+}
+#container-redesmodal{
+    padding: 0 40px 0 40px;
+}
+.texto-modal{
+    margin: 16px 0 20px 0;
+
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    cursor: default;
+}
+.link-modal{
+    margin: 0 20px 10px 0;
+
+    text-decoration: none;
+}
+.icone-redesmodal{
+    display: inline-flex;
+
+    font-size: 50px;
+
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+}
+.icone-redesmodal:hover{
+    color: #034F84;
+
+    transition: all .2s ease-in-out;
+}
+#fale-conoscomodal{
+    margin-top: 30px;
+}
+#chat-modal{
+    border: 2px solid #FFF;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+#chat-modal:hover{
+    border-color: #034F84;
+
+    cursor: pointer;
+}
+#chat-modal:hover .icone-conversarmodal{
+    color: #034F84;
+}
+#chat-modal a{
+    display: block;
+    padding: 5px;
+
+    text-decoration: none;
+}
+.icone-conversarmodal{
+    display: inline-flex;
+    margin-right: 5px;
+
+    font-size: 40px;
+
+    cursor: pointer;
+    vertical-align: middle;
+}
+#rodape-modal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+}
+#textorodape-modal{
+    padding: 0 16px 0 16px;
+    
+    font-size: 16px;
+
+    cursor: default;
+}
+#container-detalhes{
+    display: flex;
+    flex-wrap: wrap;
+}
+#foto-principal{
+    width: calc(100% - 400px);
+    min-width: 600px;
+    min-height: 720px;
+    
+    cursor: default;
+}
+#container-informacoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+
+    text-align: center;
+
+    background: #E7E7E7;
+}
+#detalhes-imovel{
+    padding: 30px 0 30px 0;
+    width: 300px;
+
+    cursor: default;
+}
+#imovel-nome{
+    padding-bottom: 25px;
+
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#imovel-status{
+    display: inline-block;
+}
+#container-status{
+    min-width: 180px;
+    padding: 8px;
+    border-radius: 32px;
+
+    font-size: 16px;
+    
+    color: #FFF;
+    background: #034F84;
+}
+#imovel-localizacao{    
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #BBB;
+
+    font-size: 16px;
+}
+#imovel-informacoes{
+    padding-top: 10px;
+}
+#lista-imovel{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+#lista-imovel li{
+    padding-bottom: 20px;
+    width: 50%;
+}
+.icone-imovel{
+    display: block;
+    
+    font-size: 50px;
+}
+#container-preco{
+    padding: 12px;
+    border-top: 1px solid #BBB;
+    border-bottom: 1px solid #BBB;
+}
+#texto-preco{
+    font-size: 22px;
+    letter-spacing: 1px;
+
+    color: #034F84;
+}
+#container-chatimovel{
+    padding: 20px 0 20px 0;
+}
+#chat-imovel{
+    padding: 12px 0 12px 0;
+    width: 100%;
+    height: 48px;
+
+    font-size: 16px;
+
+    color: #FFF;
+    background: #034F84;
+
+    transition: all .2s ease-in-out;
+}
+#chat-imovel:hover{
+    color: #FFF !important;
+    background: #022C4B !important;
+
+    transition: all .2s ease-in-out;
+}
+#container-navimovel{
+    display: flex;
+    flex-wrap: wrap;
+
+    cursor: default;
+}
+.barra-conteudoimovel{
+    padding: 0 5px;
+}
+.barra-conteudoimovel:before{
+    content: "/";
+}
+#container-galeria, #container-galeriaplantas{
+    position: relative;
+    
+    width: 100%;
+    min-width: 360px;
+    margin: 40px 0 4vh 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+.foto-galeria, .foto-plantas{
+    display: none;    
+    height: 500px;
+    border-radius: 16px 16px 0 0;
+
+    cursor: pointer;
+}
+.foto-plantas{
+    border: 3px solid #034F84;
+    border-bottom: 0;
+}
+#botao-telacheia, #botao-telacheiaplantas{
+    position: absolute;
+    right: 8px;
+    bottom: 212px;
+
+    width: auto;
+    padding: 5px;
+    border-radius: 8px;
+
+    color: #FFF;
+    background: #034F84;
+
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+#botao-telacheiaplantas{
+    bottom: 60px;
+}
+#botao-telacheia:hover, #botao-telacheiaplantas:hover{
+    opacity: 1 !important;
+}
+#icone-telacheia, #icone-telacheiaplantas{
+    display: block;
+
+    font-size: 30px;
+}
+#botao-anterior, #botao-proximo, #botao-anteriorplantas, #botao-proximoplantas{
+    position: absolute;
+    top: 220px;
+
+    width: auto;
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+
+    font-weight: bold;
+    font-size: 20px;
+    
+    color: #FFF;
+    background: #191919b0;
+
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+#botao-proximo, #botao-proximoplantas{
+    right: 0;
+
+    border-radius: 8px 0 0 8px;
+}
+#botao-anteriorplantas{
+    border-left: 3px solid #034F84;
+}
+#botao-proximoplantas{
+    border-right: 3px solid #034F84;
+}
+#botao-anterior:hover, #botao-proximo:hover, #botao-anteriorplantas:hover, #botao-proximoplantas:hover{
+    background: #191919;
+
+    transition: all .2s ease-in-out;
+}
+.contador-galeria, .contador-plantas{
+    position: absolute;
+    top: 0;
+
+    width: 70px;
+    padding: 12px 0 12px 0;
+    border-radius: 16px 0 16px 0;
+
+    font-size: 16px;
+    text-align: center;
+
+    color: #FFF;
+    background: #034F84;
+
+    cursor: default;
+}
+.contador-plantas{
+    border-radius: 12px 0 16px 0;
+}
+#texto-galeria, #texto-galeriaplantas{    
+    padding: 1px;
+    border-radius: 0 0 16px 16px;
+
+    font-size: 14px;
+    text-align: center;
+
+    color: #FFF;
+    background: #191919;
+
+    cursor: default;
+}
+#galeria-miniaturas{
+    width: 100%;
+    height: 140px;
+    margin-top: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    cursor: grab;
+}
+#galeria-miniaturas:after{
+    display: table;
+
+    content: "";
+    clear: both;
+}
+#galeria-miniaturas::-webkit-scrollbar{
+    height: 8px;
+}
+#galeria-miniaturas::-webkit-scrollbar-thumb{
+    border-radius: 16px;
+
+    background: #BBB;
+}
+#galeria-miniaturas::-webkit-scrollbar-thumb:hover{
+    background: #999999;
+}
+.cursor-galeria{
+    cursor: grabbing !important;
+}
+.container-miniaturas{
+    display: inline-block;
+    width: 200px;
+}
+.container-miniaturas:first-of-type{
+    margin-right: 6px !important;
+}
+.container-miniaturas:not(:last-of-type){
+    margin-right: 8px;
+}
+.foto-miniatura{    
+    width: 100%;
+    height: 120px;
+    border: 3px solid #191919;
+    
+    opacity: 0.5;
+}
+.foto-miniatura:hover, .foto-ativa{    
+    border: 3px solid #034F84;
+
+    opacity: 1;
+}
+#modal-fotos, #modal-plantas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background: #000;
+}
+.container-botoesmodal{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-width: 100vw;
+    height: 48px;
+}
+.contador-modal, .contador-modalplantas{
+    float: left;
+
+    display: none;
+    margin: 14px 0 0 20px;
+
+    font-size: 14px;
+
+    color: #FFF;
+
+    cursor: default;
+}
+.botao-modal{
+    float: right;
+
+    margin: 10px 20px 0 0;
+
+    font-size: 28px;
+
+    color: #BBB;
+
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.botao-modal:hover{
+    color: #FFF;
+}
+#container-modalvertical, #container-modalverticalplantas{
+    position: absolute;
+    top: 48px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 96px);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#container-modalvertical::-webkit-scrollbar, #container-modalverticalplantas::-webkit-scrollbar{
+    width: 8px;
+
+    background: #000;
+}
+#container-modalvertical::-webkit-scrollbar-thumb, #container-modalverticalplantas::-webkit-scrollbar-thumb{
+    border-radius: 16px;
+
+    background: #999999;
+}
+#anterior-modal, #proximo-modal, #anterior-modalplantas, #proximo-modalplantas{
+    position: absolute;
+
+    width: 25px;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    color: #FFF;
+    background: #000000b0;
+
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all .2s ease-in-out;
+}
+#anterior-modal, #anterior-modalplantas{
+    left: 0;
+
+    padding-left: 5px;
+    margin-left: 8px;
+}
+#proximo-modal, #proximo-modalplantas{
+    right: 0;
+
+    padding-left: 6px;
+    margin-right: 8px;
+}
+#anterior-modal:hover, #proximo-modal:hover, #anterior-modalplantas:hover, #proximo-modalplantas:hover{
+    opacity: 1;
+}
+#container-modalhorizontal, #container-modalhorizontalplantas{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+}
+.foto-modal, .foto-modalplantas{
+    display: none;
+    width: auto;
+    min-width: 392px;
+    height: auto;
+}
+#container-descricaomodal, #container-descricaomodalplantas{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 48px;
+}
+.descricao_modal, .descricao_modalplantas{
+    padding: 12px;
+    margin: 0;
+    min-width: 100vw;
+
+    font-size: 14px;
+    text-align: center;
+
+    color: #FFF;
+}
+#container-maisinformacoes{
+    width: 100%;
+    padding: 20px 0;
+    margin: 40px 0 80px 0;
+
+    text-align: center;
+
+    background: #034F84;
+}
+#texto-maisinformacoes{
+    padding: 20px 10px;
+
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #FFF;
+}
+#maisinformacoes{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+#chat-maisinformacoes, #central-maisinformacoes{
+    padding: 0 40px;
+    margin-top: 20px;
+}
+#icone-chatmaisinformacoes{
+    font-size: 46px;
+}
+#icone-centralmaisinformacoes{
+    font-size: 40px;
+}
+.icone-maisinformacoes{
+    display: block;
+
+    color: #FFF;
+}
+#botao-maisinformacoes{
+    width: 250px;
+    padding: 12px;
+    margin-top: 12px;
+
+    font-weight: bolder;
+
+    color: #034F84;
+    background: #FFF;
+}
+#botao-maisinformacoes:hover{
+    color: #034F84 !important;
+    background: #FFF !important;
+}
+#centralvendas-maisinformacoes{
+    padding-top: 10px;
+    margin: 0;
+
+    font-size: 16px;
+    text-transform: uppercase;
+
+    color: #FFF;
+}
+#telefone-maisinformacoes{
+    display: block;
+
+    font-size: 32px;
+}
+#descricoes-imovel{
+    font-size: 16px;
+    text-align: left;
+
+    cursor: default;
+}
+#descricao_imovel{
+    margin: 30px 0;
+    
+    text-indent: 20px;
+}

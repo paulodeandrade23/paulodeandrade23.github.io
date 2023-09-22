@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Viva Onde Sempre Quis</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Procurando um imóvel? No Viva Onde Sempre Quis você encontra imóveis prontos, em obras e na planta. Atendemos em toda São Paulo. Clique e confira!">
+        <meta property="og:image" content="https://www.vivaondesemprequis.com.br/images/logos/vosq-logo-436x228.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="436">
+        <meta property="og:image:height" content="228">
+        <meta property="og:description" content="Procurando um imóvel? No Viva Onde Sempre Quis você encontra imóveis prontos, em obras e na planta. Atendemos em toda São Paulo. Clique e confira!">
+        
+        <meta name="apple-mobile-web-app-title" content="Viva Onde Sempre Quis">
+        <meta name="application-name" content="Viva Onde Sempre Quis">
+        <meta name="msapplication-TileColor" content="#034f84">
+        <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+        <meta name="msapplication-config" content="/icons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="icon" type="image/x-icon" href="/icons/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+        <link rel="manifest" href="/icons/site.webmanifest">
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#034f84">
+
+        <link rel="preload" href="/scripts/jquery.min.js?v=3.7.0" as="script">
+        <link rel="preload" href="/css/font-awesome.min.css?v=4.7.0" as="style">
+        <link rel="stylesheet" href="/css/font-awesome.min.css?v=4.7.0">
+        <link rel="stylesheet" href="/css/w3.css?v=4.15">
+        <link rel="stylesheet" href="/css/vosq.css?v=1.0.1">
+
+        <script src="/scripts/jquery.min.js?v=3.7.0"></script>
+        <script src="/scripts/modalmenu.js"></script>
+        <script src="/scripts/modalgaleria.js"></script>
+        <script src="/scripts/modalplantas.js"></script>
+        <script type="module" src="/scripts/dadosimoveis.js"></script>
+        <script type="module" src="/scripts/detalhesimoveis.js"></script>
+        <script type="module" src="/scripts/descricoesfotos.js"></script>
+        <script type="module" src="/scripts/descricoesplantas.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                $('#cabecalho').load('/layouts/cabecalho.html');
+                $('#rodape').load('/layouts/rodape.html');
+                $('#modal').load('/layouts/modalmenu.html');
+            });
+
+        </script>
+    </head>
+
+    <body class="w3-white" style="overflow-y: auto;">
+
+        <!-- Chat Flutuante -->
+        <div id="chat-flutuante" title="Chat Online">
+            <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank"><i class="material-symbols-outlined icone-chatflutuante">sms</i></a>
+        </div>
+        
+        <header>
+
+            <div id="cabecalho"></div>
+            
+        </header>
+
+        <main>
+            <!-- Detalhes Imóvel -->
+            <div id="container-detalhes">
+
+                <div id="foto-principal"></div>
+
+                <div id="container-informacoes">
+                    <div id="detalhes-imovel">
+
+                        <div id="imovel-nome">                            
+                            <strong><span class="imovel_regiao"></span></strong>
+                        </div>
+
+                        <div id="imovel-status">
+                            <div id="container-status">
+                                <strong><span class="imovel_status"></span></strong>
+                            </div>
+                        </div>
+                        
+                        <div id="imovel-localizacao">
+                            <span class="imovel_endereco"></span>
+                        </div>
+
+                        <div id="imovel-informacoes">
+                            <ul id="lista-imovel">
+                                <li>
+                                    <i class="material-symbols-outlined-variation variacao-imoveis icone-imovel">
+                                        emoji_transportation
+                                    </i>Residencial
+                                </li>
+
+                                <li>
+                                    <i class="material-symbols-outlined-variation variacao-imoveis icone-imovel">
+                                        bed
+                                    </i><span class="imovel_dados"></span>
+                                </li>
+
+                                <li>
+                                    <i class="material-symbols-outlined-variation variacao-imoveis icone-imovel">
+                                        domain
+                                    </i><span class="imovel_detalhes"></span>
+                                </li>
+
+                                <li class="container_vagas">
+                                    <i class="material-symbols-outlined-variation variacao-imoveis icone-imovel">
+                                        garage
+                                    </i><span class="imovel_vagas"></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="container-preco">
+                            <strong><span id="texto-preco">Preço sob consulta</span></strong>
+                        </div>
+
+                        <div id="container-chatimovel">
+                            <a id="chat-imovel" href="" target="_blank" class="w3-button w3-round-large" title="Mais informações sobre o Imóvel">
+                                <strong>Ver mais detalhes por Chat</strong>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Conteúdo da Página -->
+            <div id="conteudo-pagina" class="w3-content">
+
+                <!-- Títulos -->
+                <div class="w3-container w3-margin-top">
+
+                    <div id="container-navimovel" class="w3-small">
+                        <a href="/" class="nav-conteudo" title="Página Principal">Home</a>
+                        <span class="barra-conteudoimovel"></span>
+                        <span>Imóveis</span>
+                        <span class="barra-conteudoimovel"></span>
+                        <span>Residenciais</span>
+                        <span class="barra-conteudoimovel"></span>
+                        <a href="" class="categoria_imovel_nav nav-conteudo" title=""></a>
+                        <span class="barra-conteudoimovel"></span>
+                        <strong><span class="nome_imovel_nav"></span></strong>
+                    </div>
+
+                    <h2 class="titulo-pagina">Galeria de Imagens</h2>
+
+                    <div id="container-galeria">
+
+                        <div class="foto-galeria" onclick="abrirModalGaleria()" title="">
+                            <div class="contador-galeria" title=""></div>
+                        </div>
+
+                        <a id="botao-anterior" onclick="alternarFoto(-1)" title="Anterior">❮</a>
+                        <a id="botao-proximo" onclick="alternarFoto(1)" title="Próximo">❯</a>
+
+                        <div id="botao-telacheia" style="opacity: 0.5;" title="Tela Cheia">
+                            <i id="icone-telacheia" class="material-symbols-outlined">fullscreen</i>
+                        </div>
+
+                        <div id="texto-galeria">
+                            <p class="descricao_galeria"></p>
+                        </div>
+
+                        <div id="galeria-miniaturas">
+                            <div class="container-miniaturas">
+                                <div class="foto-miniatura" onclick=""></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h2 class="titulo-pagina">Plantas</h2>
+
+                    <div id="container-galeriaplantas">
+
+                        <div class="foto-plantas" onclick="abrirModalPlantas()" title="">
+                            <div class="contador-plantas" title=""></div>
+                        </div>
+
+                        <a id="botao-anteriorplantas" onclick="alternarPlantas(-1)" title="Anterior">❮</a>
+                        <a id="botao-proximoplantas" onclick="alternarPlantas(1)" title="Próximo">❯</a>
+
+                        <div id="botao-telacheiaplantas" style="opacity: 0.5;" title="Tela Cheia">
+                            <i id="icone-telacheiaplantas" class="material-symbols-outlined">fullscreen</i>
+                        </div>
+
+                        <div id="texto-galeriaplantas">
+                            <p class="descricao_galeriaplantas"></p>
+                        </div>
+
+                    </div>
+
+                    <h2 id="sobre-imovel" class="titulo-pagina">Sobre o Imóvel</h2>
+
+                    <div id="descricoes-imovel">
+                    
+                        <p id="descricao_imovel"></p>
+
+                        <p><span id="descricao_endereco"></span> - <span id="descricao_local"></span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="container-maisinformacoes" class="sem-selecao">
+
+                <div id="texto-maisinformacoes">
+                    Quer mais informações sobre este imóvel?
+                </div>
+
+                <div id="maisinformacoes">
+
+                    <div id="chat-maisinformacoes">
+                        <i id="icone-chatmaisinformacoes" class="material-symbols-outlined-variation variacao-imoveis icone-maisinformacoes">chat</i>
+                        <a id="botao-maisinformacoes" href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank" class="w3-button w3-round-large" title="Mais informações sobre o Imóvel">
+                            Converse por Chat Online
+                        </a>
+                    </div>
+
+                    <div id="central-maisinformacoes">
+                        <i id="icone-centralmaisinformacoes" class="material-symbols-outlined-variation variacao-imoveis icone-maisinformacoes">call</i>
+                        <p id="centralvendas-maisinformacoes">
+                            Ligue na Central de Vendas
+                            <span id="telefone-maisinformacoes">
+                                (11) 96198-6585
+                            </span>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        
+        </main>
+
+        <footer class="w3-margin-top">
+
+            <div id="rodape"></div>
+
+        </footer>
+
+        <div id="modal"></div>
+
+        <div id="modal-galeria" style="display: none;">
+            <div id="modal-fotos" class="sem-selecao">
+
+                <div class="container-botoesmodal">
+
+                    <div class="contador-modal"></div>
+
+                    <i id="fechar-modalgaleria" class="material-symbols-outlined botao-modal" onclick="fecharModalGaleria()" title="Fechar">
+                        close
+                    </i>
+
+                    <a id="link-downloadfoto" href="" target="_blank" class="sem-decoracao">
+                        <i class="material-symbols-outlined botao-modal" title="Baixar Foto">
+                            download
+                        </i>
+                    </a>
+
+                    <i id="modal-telacheia" class="material-symbols-outlined botao-modal" onclick="abrirTelaCheia()" title="Tela Cheia">
+                        fullscreen
+                    </i>
+
+                </div>
+
+                <div id="container-modalvertical">
+
+                    <div id="anterior-modal" onclick="alternarFoto(-1)" title="Anterior">❮</div>
+                    <div id="proximo-modal" onclick="alternarFoto(1)" title="Próximo">❯</div>
+
+                    <div id="container-modalhorizontal">
+                        <img src="" class="foto-modal">
+                    </div>
+
+                </div>
+
+                <div id="container-descricaomodal">
+                    <p class="descricao_modal"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="modal-planta" style="display: none;">
+            <div id="modal-plantas" class="sem-selecao">
+
+                <div class="container-botoesmodal">
+
+                    <div class="contador-modalplantas"></div>
+
+                    <i id="fechar-modalplantas" class="material-symbols-outlined botao-modal" onclick="fecharModalPlantas()" title="Fechar">
+                        close
+                    </i>
+
+                    <a id="link-downloadplantas" href="" target="_blank" class="sem-decoracao">
+                        <i class="material-symbols-outlined botao-modal" title="Baixar Foto">
+                            download
+                        </i>
+                    </a>
+
+                    <i id="modal-telacheiaplantas" class="material-symbols-outlined botao-modal" onclick="abrirTelacheiaPlantas()" title="Tela Cheia">
+                        fullscreen
+                    </i>
+
+                </div>
+
+                <div id="container-modalverticalplantas">
+
+                    <div id="anterior-modalplantas" onclick="alternarPlantas(-1)" title="Anterior">❮</div>
+                    <div id="proximo-modalplantas" onclick="alternarPlantas(1)" title="Próximo">❯</div>
+
+                    <div id="container-modalhorizontalplantas">
+                        <img src="" class="foto-modalplantas">
+                    </div>
+
+                </div>
+
+                <div id="container-descricaomodalplantas">
+                    <p class="descricao_modalplantas"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="/scripts/galeriafotos.js"></script>
+        <script src="/scripts/galeriaplantas.js"></script>
+
+    </body>
+</html>
