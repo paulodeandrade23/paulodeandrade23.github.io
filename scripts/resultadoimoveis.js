@@ -4,6 +4,7 @@ function processarImoveis(cardImoveis, imovel) {
 
     cardImoveis.attr('href', '/imoveis/residencial.html?id=' + imovel.link);
     cardImoveis.find('.foto-imoveis').attr('src', imovel.foto);
+    cardImoveis.find('.foto-imoveis').attr('alt', 'Imóvel ' + imovel.nome);
     cardImoveis.find('.imovel_nome').text(imovel.nome);
     cardImoveis.find('.imovel_status').text(imovel.status);
     cardImoveis.find('.imovel_local').text(imovel.local);
@@ -61,7 +62,7 @@ var primeiroDetalhes = "";
 
 $.each(dadosImoveis, function(contador, imovel) {
 
-    if (imovel.status == filtroImoveis || imovel.zona == filtroImoveis) {
+    if (imovel.status == filtroImoveis || imovel.zona == filtroImoveis || filtroImoveis == "todos") {
 
         contadorImoveis++;
 

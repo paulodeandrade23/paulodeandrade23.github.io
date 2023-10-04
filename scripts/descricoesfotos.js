@@ -108,14 +108,14 @@ var descricoesFotos = [
             "Boulevard",
             "Piscina Adulto",
             "Piscina Infantil",
-            "Piscina Infantil",
             "Quadra Recreativa",
+            "Sala de Ginástica",
             "Fitness",
             "Salão de Festas",
             "Espaço Gourmet",
             "Churrasqueira",
             "Coworking",
-            "Redário",
+            "Playground",
             "Living - 3 Dormitórios"
         ]
     }
@@ -204,8 +204,8 @@ var descricoesFotos = [
             "Brinquedoteca",
             "Bicicletário",
             "Salão de Jogos",
-            "Espaço Pet",
-            "Redário",
+            "Delivery",
+            "Lobby",
             "Playground",
             "Lavanderia"
         ]

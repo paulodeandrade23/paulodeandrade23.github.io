@@ -24,9 +24,9 @@
         <link rel="manifest" href="/icons/site.webmanifest">
         <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#034f84">
 
-        <link rel="preload" href="/scripts/jquery.min.js?v=3.7.0" as="script">
-        <link rel="preload" href="/css/font-awesome.min.css?v=4.7.0" as="style">
-        <link rel="stylesheet" href="/css/font-awesome.min.css?v=4.7.0">
+        <link rel="preload" href="/fonts/lato.woff2?j564w5" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/vosq.woff?w1oje3" as="font" type="font/woff" crossorigin>
+        <link rel="stylesheet" href="/css/icones-vosq.css?v=1.2">
         <link rel="stylesheet" href="/css/w3.css?v=4.15">
         <link rel="stylesheet" href="/css/vosq.css?v=1.0.1">
 
@@ -43,6 +43,7 @@
                 $('#cabecalho').load('/layouts/cabecalho.html');
                 $('#rodape').load('/layouts/rodape.html');
                 $('#modal').load('/layouts/modalmenu.html');
+                $('#flutuante').load('/layouts/chatflutuante.html');
             });
 
         </script>
@@ -51,9 +52,7 @@
     <body class="w3-white" style="overflow-y: auto;">
 
         <!-- Chat Flutuante -->
-        <div id="chat-flutuante" title="Chat Online">
-            <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank"><i class="material-symbols-outlined icone-chatflutuante">sms</i></a>
-        </div>
+        <div id="flutuante"></div>
         
         <header>
 
@@ -68,7 +67,7 @@
                 <!-- Títulos -->
                 <div class="w3-container w3-margin-top">
 
-                    <h2 class="titulo-pagina">Imóveis Na Planta</h2>
+                    <h1 class="titulo-pagina">Imóveis Na Planta</h1>
 
                     <div id="container-nav" class="w3-small">
                         <a href="/" class="nav-conteudo" title="Página Principal">Home</a>
@@ -85,24 +84,28 @@
                 <!-- Filtros -->
                 <div id="botoes-nav" class="w3-container w3-margin-top">
 
+                    <a href="/#todos" class="w3-button w3-round-large w3-margin-right botao-nav" title="Todos os Imóveis">
+                        <i class="icone-vosq vosq-list-alt icone-nav"></i>Todos
+                    </a>
+                    
                     <a href="/imoveis/prontos.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Prontos">
-                        <i class="material-symbols-outlined icone-nav">home</i>Prontos
+                        <i class="icone-vosq vosq-home icone-nav"></i>Prontos
                     </a>
 
                     <a href="/imoveis/em-obras.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Em Obras">
-                        <i class="material-symbols-outlined icone-nav">build</i>Em Obras
+                        <i class="icone-vosq vosq-build icone-nav"></i>Em Obras
                     </a>
 
                     <button class="w3-button w3-round-large w3-margin-right botao-selecionado" title="Imóveis Na Planta">
-                        <i class="material-symbols-outlined icone-nav">design_services</i>Na Planta
+                        <i class="icone-vosq vosq-design-services icone-nav"></i>Na Planta
                     </button>
 
                     <a href="/imoveis/zona-sul.html" class="w3-button w3-round-large w3-margin-right botao-nav" title="Imóveis Zona Sul">
-                        <i class="material-symbols-outlined icone-nav">home_pin</i>Zona Sul
+                        <i class="icone-vosq vosq-home-pin icone-nav"></i>Zona Sul
                     </a>
 
                     <a href="/imoveis/zona-oeste.html" class="w3-button w3-round-large botao-nav" title="Imóveis Zona Oeste">
-                        <i class="material-symbols-outlined icone-nav">home_pin</i>Zona Oeste
+                        <i class="icone-vosq vosq-home-pin icone-nav"></i>Zona Oeste
                     </a>
 
                 </div>
@@ -111,7 +114,7 @@
                 <div id="resultado-imoveis" class="w3-padding-16 conteudo-imoveis">
 
                     <a href="" class="w3-card w3-hover-shadow sem-decoracao card-imoveis" title="">
-                        <img src="" class="foto-imoveis">
+                        <img src="" loading="lazy" alt="" width="360" height="300" class="foto-imoveis">
                         <div class="w3-container w3-white">
                             <div class="titulo-imovel">
                                 <strong><span class="imovel_nome"></span></strong>
@@ -123,16 +126,17 @@
 
                             <div id="container-dados">
                                 <div class="dados-local">
-                                    <i class="material-symbols-outlined icone-dados">location_on</i><span class="imovel_local"></span> | <span class="imovel_zona"></span>
+                                    <i class="icone-vosq vosq-location-on icone-dados"></i>
+                                    <span class="imovel_local"></span><span class="imovel_zona"></span>
                                 </div>
                                 <div class="dados-imovel">
-                                    <i class="material-symbols-outlined icone-dados">domain</i>
+                                    <i class="icone-vosq vosq-domain-op24-wt400 icone-dados"></i>
                                     <div class="detalhes-imovel">
-                                        <span class="imovel_dados"></span><span class="separador-imoveis">&nbsp;|&nbsp;</span><span class="imovel_detalhes"></span>
+                                        <span class="imovel_dados"></span><span class="imovel_detalhes"></span>
                                     </div>
                                 </div>
                                 <div class="dados-vagas">
-                                    <i class="material-symbols-outlined icone-dados">directions_car</i>
+                                    <i class="icone-vosq vosq-directions-car icone-dados"></i>
                                     <span class="imovel_vagas"></span>
                                 </div>
                             </div>

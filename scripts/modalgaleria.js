@@ -80,7 +80,7 @@ function botaoAbrirTelacheia() {
 
     modalTelaCheia.attr('onclick', 'fecharTelaCheia()');
     modalTelaCheia.attr('title', 'Tela Normal');
-    modalTelaCheia.text('fullscreen_exit');
+    modalTelaCheia.removeClass('vosq-fullscreen').addClass('vosq-fullscreen-exit');
 
 }
 
@@ -114,7 +114,7 @@ function botaoFecharTelacheia() {
     
     modalTelaCheia.attr('onclick', 'abrirTelaCheia()');
     modalTelaCheia.attr('title', 'Tela Cheia');
-    modalTelaCheia.text('fullscreen');
+    modalTelaCheia.removeClass('vosq-fullscreen-exit').addClass('vosq-fullscreen');
 
 }
 

@@ -1,0 +1,113 @@
+/*! Ícones Viva Onde Sempre Quis v1.2 | Material Symbols Outlined + Font Awesome | por IcoMoon - https://icomoon.io/ */
+/* Viva Onde Sempre Quis (icone-vosq) */
+@font-face{
+    font-family: "vosq";
+    font-style: normal;
+    font-weight: normal;
+    src: url(/fonts/vosq.eot?w1oje3);
+    src: url(/fonts/vosq.eot?w1oje3#iefix) format('embedded-opentype'),
+         url(/fonts/vosq.woff?w1oje3) format('woff'),
+         url(/fonts/vosq.svg?w1oje3#vosq) format('svg');
+    font-display: block;
+}
+.icone-vosq{
+    display: inline-block;
+
+    font-family: "vosq" !important;
+    font-variant: normal;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    text-rendering: auto;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.vosq-bed:before{
+    content: "\e900";
+}
+.vosq-call:before{
+    content: "\e901";
+}
+.vosq-chat:before{
+    content: "\e902";
+}
+.vosq-domain-op40wt200:before{
+    content: "\e903";
+}
+.vosq-emoji-transportation:before{
+    content: "\e904";
+}
+.vosq-garage:before{
+    content: "\e905";
+}
+.vosq-build:before{
+    content: "\e906";
+}
+.vosq-check-circle:before{
+    content: "\e907";
+}
+.vosq-close:before{
+    content: "\e908";
+}
+.vosq-design-services:before{
+    content: "\e909";
+}
+.vosq-directions-car:before{
+    content: "\e90a";
+}
+.vosq-domain-op24-wt400:before{
+    content: "\e90b";
+}
+.vosq-download:before{
+    content: "\e90c";
+}
+.vosq-forum:before{
+    content: "\e90d";
+}
+.vosq-fullscreen:before{
+    content: "\e90e";
+}
+.vosq-fullscreen-exit:before{
+    content: "\e90f";
+}
+.vosq-home:before{
+    content: "\e910";
+}
+.vosq-home-pin:before{
+    content: "\e911";
+}
+.vosq-keyboard-arrow-down:before{
+    content: "\e912";
+}
+.vosq-list-alt:before{
+    content: "\e913";
+}
+.vosq-location-on:before{
+    content: "\e914";
+}
+.vosq-menu:before{
+    content: "\e915";
+}
+.vosq-phone-in-talk:before{
+    content: "\e916";
+}
+.vosq-sms:before{
+    content: "\e917";
+}
+.vosq-facebook-square:before{
+    content: "\f082";
+}
+.vosq-linkedin-square:before{
+    content: "\f08c";
+}
+.vosq-instagram:before{
+    content: "\f16d";
+}

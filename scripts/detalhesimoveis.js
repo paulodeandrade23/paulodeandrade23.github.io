@@ -30,7 +30,7 @@ function detalharImoveis(imovel) {
         
     }
 
-    $('.imovel_dados').text(imovel.dados);
+    $('.imovel_dados_residencial').text(imovel.dados);
     $('.imovel_detalhes').text(imovel.detalhes);
 
     if (imovel.vagas == "") {
@@ -42,15 +42,6 @@ function detalharImoveis(imovel) {
         $('.imovel_vagas').text(imovel.vagas);
 
     }
-
-    var imovelChat = imovel.nome.replace(/\s+/g, "%20");
-
-    $('#chat-imovel').attr(
-        
-        'href', 
-        'https://api.whatsapp.com/send?phone=5511961986585&text=Olá!%20Quero%20mais%20informações%20sobre%20o%20imóvel%20' + imovelChat + '.'
-        
-    );
 
     $('.nome_imovel_nav').text(imovel.nome);
 
@@ -98,10 +89,11 @@ function popularGaleria(imovel) {
 
         if (contadorFotos == 1) {
 
-            var fotoGaleria = 'url("/images/imoveis/' + imovel.link + '/1.jpg")';
+            var fotoGaleria = "/images/imoveis/" + imovel.link + "/1.jpg";
+
+            divGaleria.first().attr('data-bg', fotoGaleria);
 
             divGaleria.first().css({
-                "background": fotoGaleria,
                 "background-size": "cover",
                 "background-position": "center",
                 "background-repeat": "no-repeat"
@@ -109,26 +101,28 @@ function popularGaleria(imovel) {
 
             contadorGaleria.first().text('1' + ' ' + '/' + ' ' + qtdFotos.toString());
 
-            var fotoMiniatura = fotoGaleria;
+            var fotoMiniatura = "/images/imoveis/" + imovel.link + "/miniaturas/1.jpg";;
 
             divMiniatura.first().css({
-                "background": fotoMiniatura,
                 "background-size": "cover",
                 "background-position": "center",
                 "background-repeat": "no-repeat"
             });
 
+            divMiniatura.first().attr('data-bg', fotoMiniatura);
+
             divMiniatura.first().attr('onclick', 'abrirFoto(1)');
 
         } else {
 
-            var fotoGaleria = 'url("/images/imoveis/' + imovel.link + '/' + contadorFotos.toString() + '.jpg")';
+            var fotoGaleria = "/images/imoveis/" + imovel.link + "/" + contadorFotos.toString() + ".jpg";
 
             var novaGaleria = divGaleria.first().clone();
 
+            novaGaleria.attr('data-bg', fotoGaleria);
+
             novaGaleria.css({
                 "display": "none",
-                "background": fotoGaleria,
                 "background-size": "cover",
                 "background-position": "center",
                 "background-repeat": "no-repeat"
@@ -140,14 +134,15 @@ function popularGaleria(imovel) {
 
             novaGaleria.insertBefore($('#botao-anterior'));
 
-            var fotoMiniatura = fotoGaleria;
+            var fotoMiniatura = "/images/imoveis/" + imovel.link + "/miniaturas/" + contadorFotos.toString() + ".jpg";
 
             var novoContainer = containerMiniaturas.first().clone();
 
             var novaMiniatura = novoContainer.find('.foto-miniatura');
 
+            novaMiniatura.attr('data-bg', fotoMiniatura);
+
             novaMiniatura.css({
-                "background": fotoMiniatura,
                 "background-size": "cover",
                 "background-position": "center",
                 "background-repeat": "no-repeat"
@@ -176,7 +171,7 @@ function popularGaleriaModal(imovel) {
 
             var fotoModal = "/images/imoveis/" + imovel.link + "/1.jpg";
 
-            imgFotoModal.first().attr('src', fotoModal);
+            imgFotoModal.first().attr('data-src', fotoModal);
 
             contadorModal.first().text('1' + ' ' + '/' + ' ' + qtdFotos.toString());
 
@@ -186,7 +181,7 @@ function popularGaleriaModal(imovel) {
 
             var novaFotoModal = imgFotoModal.first().clone();
 
-            novaFotoModal.attr('src', fotoModal);
+            novaFotoModal.attr('data-src', fotoModal);
 
             var novoContadorModal = contadorModal.first().clone();
 
@@ -213,10 +208,11 @@ function popularPlantas(imovel) {
 
         if (contadorPlanta == 1) {
 
-            var fotoPlanta = 'url("/images/imoveis/' + imovel.link + '/planta-1.jpg")';
+            var fotoPlanta = "/images/imoveis/" + imovel.link + "/planta-1.jpg";
+
+            divPlantas.first().attr('data-bg', fotoPlanta);
 
             divPlantas.first().css({
-                "background": fotoPlanta,
                 "background-size": "contain",
                 "background-position": "center",
                 "background-repeat": "no-repeat"
@@ -226,13 +222,14 @@ function popularPlantas(imovel) {
 
         } else {
 
-            var fotoPlanta = 'url("/images/imoveis/' + imovel.link + '/planta-' + contadorPlanta.toString() + '.jpg")';
+            var fotoPlanta = "/images/imoveis/" + imovel.link + "/planta-" + contadorPlanta.toString() + ".jpg";
 
             var novaPlanta = divPlantas.first().clone();
 
+            novaPlanta.attr('data-bg', fotoPlanta);
+
             novaPlanta.css({
                 "display": "none",
-                "background": fotoPlanta,
                 "background-size": "contain",
                 "background-position": "center",
                 "background-repeat": "no-repeat"
@@ -270,7 +267,7 @@ function popularPlantasModal(imovel) {
 
             var fotoPlanta = '/images/imoveis/' + imovel.link + '/planta-1.jpg';
 
-            imgPlantasModal.first().attr('src', fotoPlanta);
+            imgPlantasModal.first().attr('data-src', fotoPlanta);
 
             contadorPlantaModal.first().text('1' + ' ' + '/' + ' ' + qtdPlantas.toString());
 
@@ -280,7 +277,7 @@ function popularPlantasModal(imovel) {
 
             var novaPlantaModal = imgPlantasModal.first().clone();
 
-            novaPlantaModal.attr('src', fotoPlanta);
+            novaPlantaModal.attr('data-src', fotoPlanta);
 
             var novoContadorPlantaModal = contadorPlantaModal.first().clone();
 
@@ -309,6 +306,8 @@ var urlPagina = window.location.href.toString();
 var posicaoId = urlPagina.indexOf('=') + 1;
 var idImovel = urlPagina.substring(posicaoId);
 
+var inputTituloEmail = $('input[name=_subject]');
+
 $.each(dadosImoveis, function(contador, imovel) {
 
     if (imovel.link == idImovel) {
@@ -324,6 +323,8 @@ $.each(dadosImoveis, function(contador, imovel) {
         popularPlantas(imovel);
 
         popularPlantasModal(imovel);
+
+        inputTituloEmail.val("Contato sobre o imóvel " + imovel.nome + " - Viva Onde Sempre Quis");
 
         return false;
 
@@ -385,6 +386,7 @@ function popularDescricoes(descricao) {
 function popularDescricoesModal(descricao) {
 
     var textoDescricoesModal = descricao.descricoes;
+    var fotoModal = $('.foto-modal');
 
     $.each(textoDescricoesModal, function(contador, textodescricao) {
 
@@ -394,11 +396,15 @@ function popularDescricoesModal(descricao) {
 
             descricaoModal.text(textodescricao);
 
+            fotoModal.first().attr('alt', textodescricao);
+
         } else {
 
             var descricaoModal = $('.descricao_modal').first().clone();
 
             descricaoModal.text(textodescricao);
+
+            fotoModal.eq(contador).attr('alt', textodescricao);
 
         }
         
@@ -456,6 +462,7 @@ function popularDescricoesPlantas(descricaoPlanta) {
 function popularDescricoesPlantasModal(descricaoPlanta) {
 
     var textoDescricoesPlantasModal = descricaoPlanta.descricoes;
+    var fotoModalPlantas = $('.foto-modalplantas');
 
     $.each(textoDescricoesPlantasModal, function(contador, textodescricaoPlanta) {
 
@@ -465,11 +472,15 @@ function popularDescricoesPlantasModal(descricaoPlanta) {
 
             descricaoPlantasModal.text(textodescricaoPlanta);
 
+            fotoModalPlantas.first().attr('alt', textodescricaoPlanta);
+
         } else {
 
             var descricaoPlantasModal = $('.descricao_modalplantas').first().clone();
 
             descricaoPlantasModal.text(textodescricaoPlanta);
+
+            fotoModalPlantas.eq(contador).attr('alt', textodescricaoPlanta);
 
         }
 
