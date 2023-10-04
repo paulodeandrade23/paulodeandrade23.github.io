@@ -80,7 +80,7 @@ function botaoAbrirTelacheiaPlantas() {
 
     modalTelacheiaPlantas.attr('onclick', 'fecharTelacheiaPlantas()');
     modalTelacheiaPlantas.attr('title', 'Tela Normal');
-    modalTelacheiaPlantas.text('fullscreen_exit');
+    modalTelacheiaPlantas.removeClass('vosq-fullscreen').addClass('vosq-fullscreen-exit');
 
 }
 
@@ -114,7 +114,7 @@ function botaoFecharTelacheiaPlantas() {
 
     modalTelacheiaPlantas.attr('onclick', 'abrirTelacheiaPlantas()');
     modalTelacheiaPlantas.attr('title', 'Tela Cheia');
-    modalTelacheiaPlantas.text('fullscreen');
+    modalTelacheiaPlantas.removeClass('vosq-fullscreen-exit').addClass('vosq-fullscreen');
 
 }
 

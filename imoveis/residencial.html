@@ -24,13 +24,14 @@
         <link rel="manifest" href="/icons/site.webmanifest">
         <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#034f84">
 
-        <link rel="preload" href="/scripts/jquery.min.js?v=3.7.0" as="script">
-        <link rel="preload" href="/css/font-awesome.min.css?v=4.7.0" as="style">
-        <link rel="stylesheet" href="/css/font-awesome.min.css?v=4.7.0">
+        <link rel="preload" href="/fonts/lato.woff2?j564w5" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/vosq.woff?w1oje3" as="font" type="font/woff" crossorigin>
+        <link rel="stylesheet" href="/css/icones-vosq.css?v=1.2">
         <link rel="stylesheet" href="/css/w3.css?v=4.15">
         <link rel="stylesheet" href="/css/vosq.css?v=1.0.1">
 
         <script src="/scripts/jquery.min.js?v=3.7.0"></script>
+        <script src="/scripts/lazyload.min.js"></script>
         <script src="/scripts/modalmenu.js"></script>
         <script src="/scripts/modalgaleria.js"></script>
         <script src="/scripts/modalplantas.js"></script>
@@ -38,12 +39,14 @@
         <script type="module" src="/scripts/detalhesimoveis.js"></script>
         <script type="module" src="/scripts/descricoesfotos.js"></script>
         <script type="module" src="/scripts/descricoesplantas.js"></script>
+        <script type="module" src="/scripts/descricoesimoveis.js"></script>
         <script>
 
             $(document).ready(function() {
                 $('#cabecalho').load('/layouts/cabecalho.html');
                 $('#rodape').load('/layouts/rodape.html');
                 $('#modal').load('/layouts/modalmenu.html');
+                $('#flutuante').load('/layouts/chatflutuante.html');
             });
 
         </script>
@@ -52,9 +55,7 @@
     <body class="w3-white" style="overflow-y: auto;">
 
         <!-- Chat Flutuante -->
-        <div id="chat-flutuante" title="Chat Online">
-            <a href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank"><i class="material-symbols-outlined icone-chatflutuante">sms</i></a>
-        </div>
+        <div id="flutuante"></div>
         
         <header>
 
@@ -88,27 +89,19 @@
                         <div id="imovel-informacoes">
                             <ul id="lista-imovel">
                                 <li>
-                                    <i class="material-symbols-outlined-variation variacao-imoveis icone-imovel">
-                                        emoji_transportation
-                                    </i>Residencial
+                                    <i class="icone-vosq vosq-emoji-transportation icone-imovel"></i>Residencial
                                 </li>
 
                                 <li>
-                                    <i class="material-symbols-outlined-variation variacao-imoveis icone-imovel">
-                                        bed
-                                    </i><span class="imovel_dados"></span>
+                                    <i class="icone-vosq vosq-bed icone-imovel"></i><span class="imovel_dados_residencial"></span>
                                 </li>
 
                                 <li>
-                                    <i class="material-symbols-outlined-variation variacao-imoveis icone-imovel">
-                                        domain
-                                    </i><span class="imovel_detalhes"></span>
+                                    <i class="icone-vosq vosq-domain-op40wt200 icone-imovel"></i><span class="imovel_detalhes"></span>
                                 </li>
 
                                 <li class="container_vagas">
-                                    <i class="material-symbols-outlined-variation variacao-imoveis icone-imovel">
-                                        garage
-                                    </i><span class="imovel_vagas"></span>
+                                    <i class="icone-vosq vosq-garage icone-imovel"></i><span class="imovel_vagas"></span>
                                 </li>
                             </ul>
                         </div>
@@ -117,9 +110,9 @@
                             <strong><span id="texto-preco">Preço sob consulta</span></strong>
                         </div>
 
-                        <div id="container-chatimovel">
-                            <a id="chat-imovel" href="" target="_blank" class="w3-button w3-round-large" title="Mais informações sobre o Imóvel">
-                                <strong>Ver mais detalhes por Chat</strong>
+                        <div id="container-solicitarinformacoes">
+                            <a id="solicitar-informacoes" href="#contato" class="w3-button w3-round-large" title="Solicitar informações sobre o Imóvel">
+                                <strong>Solicitar mais informações</strong>
                             </a>
                         </div>
 
@@ -146,19 +139,19 @@
                         <strong><span class="nome_imovel_nav"></span></strong>
                     </div>
 
-                    <h2 class="titulo-pagina">Galeria de Imagens</h2>
+                    <h1 class="titulo-pagina">Galeria de Imagens</h1>
 
                     <div id="container-galeria">
 
-                        <div class="foto-galeria" onclick="abrirModalGaleria()" title="">
+                        <div class="foto-galeria lazy" data-bg="" onclick="abrirModalGaleria()" title="">
                             <div class="contador-galeria" title=""></div>
                         </div>
 
                         <a id="botao-anterior" onclick="alternarFoto(-1)" title="Anterior">❮</a>
                         <a id="botao-proximo" onclick="alternarFoto(1)" title="Próximo">❯</a>
 
-                        <div id="botao-telacheia" style="opacity: 0.5;" title="Tela Cheia">
-                            <i id="icone-telacheia" class="material-symbols-outlined">fullscreen</i>
+                        <div id="botao-telacheia" style="opacity: 0.5;" onclick="abrirModalGaleria()" title="Tela Cheia">
+                            <i id="icone-telacheia" class="icone-vosq vosq-fullscreen"></i>
                         </div>
 
                         <div id="texto-galeria">
@@ -167,25 +160,25 @@
 
                         <div id="galeria-miniaturas">
                             <div class="container-miniaturas">
-                                <div class="foto-miniatura" onclick=""></div>
+                                <div class="foto-miniatura lazy" data-bg="" onclick=""></div>
                             </div>
                         </div>
 
                     </div>
 
-                    <h2 class="titulo-pagina">Plantas</h2>
+                    <div class="titulo-pagina">Plantas</div>
 
                     <div id="container-galeriaplantas">
 
-                        <div class="foto-plantas" onclick="abrirModalPlantas()" title="">
+                        <div class="foto-plantas lazy" data-bg="" onclick="abrirModalPlantas()" title="">
                             <div class="contador-plantas" title=""></div>
                         </div>
 
                         <a id="botao-anteriorplantas" onclick="alternarPlantas(-1)" title="Anterior">❮</a>
                         <a id="botao-proximoplantas" onclick="alternarPlantas(1)" title="Próximo">❯</a>
 
-                        <div id="botao-telacheiaplantas" style="opacity: 0.5;" title="Tela Cheia">
-                            <i id="icone-telacheiaplantas" class="material-symbols-outlined">fullscreen</i>
+                        <div id="botao-telacheiaplantas" style="opacity: 0.5;" onclick="abrirModalPlantas()" title="Tela Cheia">
+                            <i id="icone-telacheiaplantas" class="icone-vosq vosq-fullscreen"></i>
                         </div>
 
                         <div id="texto-galeriaplantas">
@@ -194,13 +187,13 @@
 
                     </div>
 
-                    <h2 id="sobre-imovel" class="titulo-pagina">Sobre o Imóvel</h2>
+                    <div id="sobre-imovel" class="titulo-pagina">Sobre o Imóvel</div>
 
                     <div id="descricoes-imovel">
                     
                         <p id="descricao_imovel"></p>
 
-                        <p><span id="descricao_endereco"></span> - <span id="descricao_local"></span></p>
+                        <p><span id="descricao_endereco"></span><span id="descricao_local"></span></p>
 
                     </div>
 
@@ -217,14 +210,14 @@
                 <div id="maisinformacoes">
 
                     <div id="chat-maisinformacoes">
-                        <i id="icone-chatmaisinformacoes" class="material-symbols-outlined-variation variacao-imoveis icone-maisinformacoes">chat</i>
+                        <i id="icone-chatmaisinformacoes" class="icone-vosq vosq-chat icone-maisinformacoes"></i>
                         <a id="botao-maisinformacoes" href="https://api.whatsapp.com/send?phone=5511961986585" target="_blank" class="w3-button w3-round-large" title="Mais informações sobre o Imóvel">
                             Converse por Chat Online
                         </a>
                     </div>
 
                     <div id="central-maisinformacoes">
-                        <i id="icone-centralmaisinformacoes" class="material-symbols-outlined-variation variacao-imoveis icone-maisinformacoes">call</i>
+                        <i id="icone-centralmaisinformacoes" class="icone-vosq vosq-call icone-maisinformacoes"></i>
                         <p id="centralvendas-maisinformacoes">
                             Ligue na Central de Vendas
                             <span id="telefone-maisinformacoes">
@@ -232,6 +225,77 @@
                             </span>
                         </p>
                     </div>
+
+                </div>
+
+            </div>
+
+            <div id="contato">
+
+                <div id="titulo-contato">Contato</div>
+
+                <div id="texto-contato">
+                    Precisa saber mais sobre este empreendimento? Entre em contato conosco!<br>
+                    Responderemos o mais rápido possível. Não compartilhamos estes dados com terceiros.
+                </div>
+
+                <div id="resultado-formulario" class="sem-selecao" style="display: none;">
+
+                    <span id="texto-resultadoformulario">
+                        <i id="icone-resultadoformulario" class="icone-vosq vosq-check-circle"></i>
+                        <span id="mensagem-resultadoformulario">Seu contato foi enviado com sucesso!</span>
+                    </span>
+
+                    <i id="fechar-resultadoformulario" class="icone-vosq vosq-close" title="Fechar" onclick="fecharResultadoFormulario()"></i>
+
+                </div>
+
+                <div id="container-contato">
+
+                    <form method="POST" onsubmit="return enviarFormularioContato()" class="formulario_contato">
+
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="">
+                        <input type="text" name="_honey" style="display: none;">
+                    
+                        <div class="container-formulario">
+                            <label for="meio-contato" class="texto-formulario">Por onde podemos nos comunicar?</label>
+                            <select id="meio-contato" name="Contato" class="opcoes-formulario" required>
+                                <option value selected>Escolha uma opção...</option>
+                                <option value="E-mail">E-mail</option>
+                                <option value="Chat Online">WhatsApp</option>
+                            </select>
+                        </div>
+
+                        <div class="container-formulario">
+                            <label for="nome-contato" class="texto-formulario">Qual é o seu nome?</label>
+                            <input type="text" id="nome-contato" name="Nome" minlength="2" maxlength="50" pattern="^[a-zA-Z ]*$" title="Números e caracteres especiais não são permitidos." class="input-formulario" required>
+                        </div>
+
+                        <div class="container-formulario">
+                            <label for="email-contato" class="texto-formulario">Informe um e-mail para contato</label>
+                            <input type="email" id="email-contato" name="E-mail" minlength="2" maxlength="50" class="input-formulario" required>
+                        </div>
+
+                        <div id="container-textotelefone">
+                            <label for="ddd-contato" id="texto-ddd" class="texto-formulario">Seu DDD</label>
+                            <label for="telefone-contato" class="texto-formulario">Número de telefone</label>
+                        </div>
+
+                        <div id="container-formulariotelefone">
+                            <input type="tel" id="ddd-contato" name="DDD" inputmode="numeric" minlength="2" maxlength="2" pattern="^[0-9]{2,2}$" title="Insira somente 2 caracteres numéricos. Ex: 11" class="input-ddd" required>
+                            <input type="tel" id="telefone-contato" name="Telefone" inputmode="numeric" minlength="8" maxlength="9" pattern="^[0-9]{8,9}$" title="Insira somente de 8 a 9 caracteres numéricos. Ex: 12345678 ou 912345678" class="input-formulario" required>
+                        </div>
+                        
+                        <div class="container-formulario">
+                            <label for="mensagem-contato" class="texto-formulario">Escreva a sua mensagem</label>
+                            <textarea id="mensagem-contato" name="Mensagem" cols="40" rows="4" minlength="2" maxlength="500" wrap="hard" class="areatexto-formulario" required></textarea>
+                        </div>
+
+                        <button type="submit" class="w3-button w3-round-large botao-contato" title="Enviar Dados para Solicitar Contato">Enviar Solicitação de Contato</button>
+
+                    </form>
 
                 </div>
 
@@ -254,19 +318,13 @@
 
                     <div class="contador-modal"></div>
 
-                    <i id="fechar-modalgaleria" class="material-symbols-outlined botao-modal" onclick="fecharModalGaleria()" title="Fechar">
-                        close
-                    </i>
+                    <i id="fechar-modalgaleria" class="icone-vosq vosq-close botao-modal" onclick="fecharModalGaleria()" title="Fechar"></i>
 
                     <a id="link-downloadfoto" href="" target="_blank" class="sem-decoracao">
-                        <i class="material-symbols-outlined botao-modal" title="Baixar Foto">
-                            download
-                        </i>
+                        <i class="icone-vosq vosq-download botao-modal" title="Baixar Foto"></i>
                     </a>
 
-                    <i id="modal-telacheia" class="material-symbols-outlined botao-modal" onclick="abrirTelaCheia()" title="Tela Cheia">
-                        fullscreen
-                    </i>
+                    <i id="modal-telacheia" class="icone-vosq vosq-fullscreen botao-modal" onclick="abrirTelaCheia()" title="Tela Cheia"></i>
 
                 </div>
 
@@ -276,7 +334,7 @@
                     <div id="proximo-modal" onclick="alternarFoto(1)" title="Próximo">❯</div>
 
                     <div id="container-modalhorizontal">
-                        <img src="" class="foto-modal">
+                        <img data-src="" alt="" class="foto-modal lazy">
                     </div>
 
                 </div>
@@ -295,19 +353,13 @@
 
                     <div class="contador-modalplantas"></div>
 
-                    <i id="fechar-modalplantas" class="material-symbols-outlined botao-modal" onclick="fecharModalPlantas()" title="Fechar">
-                        close
-                    </i>
+                    <i id="fechar-modalplantas" class="icone-vosq vosq-close botao-modal" onclick="fecharModalPlantas()" title="Fechar"></i>
 
                     <a id="link-downloadplantas" href="" target="_blank" class="sem-decoracao">
-                        <i class="material-symbols-outlined botao-modal" title="Baixar Foto">
-                            download
-                        </i>
+                        <i class="icone-vosq vosq-download botao-modal" title="Baixar Foto"></i>
                     </a>
 
-                    <i id="modal-telacheiaplantas" class="material-symbols-outlined botao-modal" onclick="abrirTelacheiaPlantas()" title="Tela Cheia">
-                        fullscreen
-                    </i>
+                    <i id="modal-telacheiaplantas" class="icone-vosq vosq-fullscreen botao-modal" onclick="abrirTelacheiaPlantas()" title="Tela Cheia"></i>
 
                 </div>
 
@@ -317,7 +369,7 @@
                     <div id="proximo-modalplantas" onclick="alternarPlantas(1)" title="Próximo">❯</div>
 
                     <div id="container-modalhorizontalplantas">
-                        <img src="" class="foto-modalplantas">
+                        <img data-src="" alt="" class="foto-modalplantas lazy">
                     </div>
 
                 </div>
@@ -331,6 +383,40 @@
 
         <script src="/scripts/galeriafotos.js"></script>
         <script src="/scripts/galeriaplantas.js"></script>
+        <script src="/scripts/formulariocontato.js"></script>
+
+        <script>
+
+            $(document).ready(function() {
+
+                var carregarGaleriaLazy = new LazyLoad({
+                    container: document.querySelector("#container-galeria")
+                });
+
+                var carregarMiniaturasLazy = new LazyLoad({
+                    container: document.querySelector("#galeria-miniaturas")
+                });
+
+                var carregarPlantasLazy = new LazyLoad({
+                    container: document.querySelector("#container-galeriaplantas")
+                });
+
+                var carregarModalLazy = new LazyLoad({
+                    container: document.querySelector("#container-modalhorizontal")
+                });
+
+                var carregarModalPlantasLazy = new LazyLoad({
+                    container: document.querySelector("#container-modalhorizontalplantas")
+                });
+
+                carregarGaleriaLazy.update();
+                carregarMiniaturasLazy.update();
+                carregarPlantasLazy.update();
+                carregarModalLazy.update();
+
+            });
+
+        </script>
 
     </body>
 </html>
