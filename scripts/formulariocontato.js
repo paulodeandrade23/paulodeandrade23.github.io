@@ -16,7 +16,7 @@ function enviarFormularioContato() {
     var opcaoContato = document.getElementById('meio-contato').value;
     var formularioContato = document.querySelector('.formulario_contato');
     var dadosFormulario = new FormData(formularioContato);
-    var urlFormSubmitCo = "";
+    var urlFormSubmitCo = "https://formsubmit.co/guilhermezoigs@gmail.com";
 
     fetch(
 
